@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Aditya Salunke KI JAGAH
+<h1>Data has been updated</h1>
 </body>
 </html>
