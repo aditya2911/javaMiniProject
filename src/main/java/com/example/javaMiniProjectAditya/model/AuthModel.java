@@ -12,28 +12,57 @@ import lombok.Setter;
 @Entity
 
 @Table(name = "auth")
-@Getter
-@Setter
+
 public class AuthModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private  long id;
+	public  long id;
 
 	
 	@Column
 	@Nonnull
-	private String name;
+	public String name;
 	
 	@Column 
 	@Nonnull
-	Long UCID;
+	public Long UCID;
 	
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Long getUCID() {
+		return UCID;
+	}
+
+	public void setUCID(Long uCID) {
+		UCID = uCID;
+	}
+
 	public AuthModel(String name2, long ucid2) {
 		this.name = name2;
 		this.UCID = ucid2;
 	}
+	
+	public AuthModel() {
+		
+	}
+	
+	
 
 
 	public static void main(String[] args) {

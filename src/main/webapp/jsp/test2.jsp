@@ -17,7 +17,7 @@
     <button type="submit">Submit</button>
 </form>
 
-<form method="POST" action="/allUser">
+<form method="GET" action="/allUser">
     <button type="pust">Submit</button>
 </form>
 
