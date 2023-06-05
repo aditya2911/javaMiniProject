@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="POST" action="sendData">
+<form method="POST" action="/test-servlet/">
     <label for="name">Name: </label>
     <input type="text" id="name" name="name" required>
     
@@ -17,7 +17,7 @@
     <button type="submit">Submit</button>
 </form>
 
-<form method="GET" action="/allUser">
+<form method="GET" action="/test-servlet/">
     <button type="pust">Submit</button>
 </form>
 

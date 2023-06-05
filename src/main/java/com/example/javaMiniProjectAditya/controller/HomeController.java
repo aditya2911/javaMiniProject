@@ -38,23 +38,39 @@ public class HomeController {
     	return "redirect:/success";
     }
     
-    @PostMapping("/sendData")
-    public String sendData(@RequestParam String name,@RequestParam long ucid) {
-    	AuthModel a = new AuthModel(name,ucid);
-    	repo.save(a);
-    	return "redirect:/success";
+    @GetMapping("/signIn")
+    public String signIn() {
+    	return "signIn";
     }
     
-    @GetMapping("/allUser")
-    public String getAll(Model model){
+    @GetMapping("allUser")
+    public String allUser() {
+    	return "allUser";
+    }
+    
+//    @PostMapping("/sendData")
+//    public String sendData(@RequestParam String name,@RequestParam long ucid) {
+//    	AuthModel a = new AuthModel(name,ucid);
+//    	repo.save(a);
+//    	return "redirect:/success";
+//    }
+    
+    //@PostMapping("/sendData")
+    public void sendData( String name, long ucid) {
+    	AuthModel a = new AuthModel(name,ucid);
+    	repo.save(a);
+    	return ;
+    }
+    
+    
+//    @GetMapping("/allUser")
+    public List<AuthModel> getAll(){
     	List<AuthModel> arr = repo.findAll();
     	  for (AuthModel user : arr) {
     	        System.out.println("User is "+user.getName()); // Print user object to the console
     	    }
-  
-    	    model.addAttribute("users", arr);
-    	    model.addAttribute("name", "hi aditya");
 
-    	  return "allUser";
+
+    	  return arr;
     }
 }

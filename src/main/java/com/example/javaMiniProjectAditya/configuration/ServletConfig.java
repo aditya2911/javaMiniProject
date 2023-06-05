@@ -4,21 +4,27 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.example.javaMiniProjectAditya.TestServlet;
+import com.example.javaMiniProjectAditya.controller.HomeController;
 
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ServletConfig {
 
+    private final HomeController homeController;
+    
+    public ServletConfig(HomeController homeController) {
+        this.homeController = homeController;
+    }
+	
 	@Bean
 	 public ServletRegistrationBean<TestServlet> myServletRegistration() {
-		 ServletRegistrationBean<TestServlet> registration = new ServletRegistrationBean<>(new TestServlet(),"/test-servlet/*");
+        TestServlet testServlet = new TestServlet(homeController);
+		 ServletRegistrationBean<TestServlet> registration = new ServletRegistrationBean<>(testServlet,"/test-servlet/*");
 		 return registration;
 	 }
 	
-	public ServletConfig() {
-		// TODO Auto-generated constructor stub
-	}
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
