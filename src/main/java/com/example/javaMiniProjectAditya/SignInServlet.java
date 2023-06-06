@@ -30,19 +30,33 @@ public class SignInServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 		
 		Long id = Long.parseLong(req.getParameter("ucid"));
-		String password = req.getParameter("password");
-		Optional<AuthModel> opt= controller.findById(id);
-		AuthModel user = null;
-    	RequestDispatcher dispatcher = req.getRequestDispatcher("/success");
+		String name = req.getParameter("name");
+		String password = req.getParameter("pass");
+		System.out.println("project is "+name+" password"+password	);
 
+		
+		Optional<AuthModel> opt= controller.findByUsernameAndPassword(name,password);
+		
+    	RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/jspRedirect.jsp");
+    	RequestDispatcher failedAuth = req.getRequestDispatcher("/jsp/AuthFailed.jsp");
+    	System.out.println("inside signin servlet");
 		if(opt.isPresent()) {
-			user = opt.get();
+			//user = opt.get();
 			try {
 				dispatcher.forward(req, resp);
 			} catch (ServletException | IOException e) {
 				e.printStackTrace();
 			} 
 			
+		}
+		else {
+			try {
+				failedAuth.forward(req, resp);
+			} catch (ServletException | IOException  e) {
+				
+				
+				e.printStackTrace();
+			} 
 		}
 		
 		

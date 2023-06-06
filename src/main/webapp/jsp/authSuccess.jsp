@@ -18,6 +18,6 @@
     </style>
 </head>
 <body>
-    <h1>Data has been updated</h1>
+    <h1>Authentication Success</h1>
 </body>
 </html>

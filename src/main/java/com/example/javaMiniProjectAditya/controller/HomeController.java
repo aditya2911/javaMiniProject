@@ -29,7 +29,7 @@ public class HomeController {
     }
     
     
-    @RequestMapping("/success")
+    @RequestMapping("success")
     public String goToSuccess() {
         return "success";
     }
@@ -82,4 +82,12 @@ public class HomeController {
 
     	  return arr;
     }
+
+
+	public Optional<AuthModel> findByUsernameAndPassword(String name ,String password) {
+		// TODO Auto-generated method stub
+		Optional<AuthModel> opt = repo.findByNameAndPassword(name, password);
+		
+		return opt;
+	}
 }

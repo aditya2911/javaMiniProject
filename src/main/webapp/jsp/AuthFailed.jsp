@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Authentication Success</title>
+    <title>Authentication Failed</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,6 +18,6 @@
     </style>
 </head>
 <body>
-    <h1>Data has been updated</h1>
+    <h1>Authentication Failed</h1>
 </body>
 </html>

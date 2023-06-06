@@ -48,7 +48,7 @@ public class TestServlet extends HttpServlet{
 		}
     }
     @Override
-    protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws IOException{
+    protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws IOException, ServletException{
     	String name = req.getParameter("name");
     	Long ucid = Long.parseLong(req.getParameter("ucid"));
     	String password = req.getParameter("pass");
@@ -57,6 +57,8 @@ public class TestServlet extends HttpServlet{
     	controller.sendData(name, ucid,password);
     	
     	System.out.print("Success");
+    	RequestDispatcher dispatcher = req.getRequestDispatcher("/success");
+    	dispatcher.forward(req, resp);
     	
 
     }
