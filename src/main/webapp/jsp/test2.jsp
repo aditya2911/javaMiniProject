@@ -14,6 +14,9 @@
     <label for="ucid">UCID:</label>
     <input type="number" id="ucid" name="ucid" required>
     
+    <label for="pass">password</label>
+<input type="password" name="pass" id="pass" required>
+    
     <button type="submit">Submit</button>
 </form>
 

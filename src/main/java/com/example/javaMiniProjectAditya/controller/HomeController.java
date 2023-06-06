@@ -2,6 +2,7 @@ package com.example.javaMiniProjectAditya.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,10 +57,18 @@ public class HomeController {
 //    }
     
     //@PostMapping("/sendData")
-    public void sendData( String name, long ucid) {
-    	AuthModel a = new AuthModel(name,ucid);
+    public void sendData( String name, long ucid,String password) {
+    	AuthModel a = new AuthModel(name,ucid,password);
     	repo.save(a);
     	return ;
+    }
+    
+    
+    public Optional<AuthModel> findById(Long id){
+    	Optional<AuthModel> opt = repo.findById(id);
+		return opt;
+    	
+    	
     }
     
     

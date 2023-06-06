@@ -28,6 +28,17 @@ public class AuthModel {
 	@Nonnull
 	public Long UCID;
 	
+	@Column
+	@Nonnull
+	private String password;
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String pass) {
+		this.password = pass;
+	}
 	
 	public long getId() {
 		return id;
@@ -53,9 +64,10 @@ public class AuthModel {
 		UCID = uCID;
 	}
 
-	public AuthModel(String name2, long ucid2) {
+	public AuthModel(String name2, long ucid2,String password) {
 		this.name = name2;
 		this.UCID = ucid2;
+		this.password = password;
 	}
 	
 	public AuthModel() {

@@ -8,11 +8,14 @@
 </head>
 <body>
 
-<form action="/test-servlet/" method="ACTION"> 
-<label for="name"></label>
+<form action="/signIn-servlet/" method="GET"> 
+<label for="name">Name</label>
 <input type="text" name="name" id="name" required>
 
-<label for="pass"></label>
+<label for="ucid">Ucid</label>
+<input type="number" name="ucid" id="ucid" required>
+
+<label for="pass">password</label>
 <input type="password" name="pass" id="pass" required>
 
 <button type="submit" >Sign In</button>
